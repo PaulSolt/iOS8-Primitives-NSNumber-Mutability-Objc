@@ -95,14 +95,18 @@ void cStringExercise(void) {
     char *ptr = malloc(sizeof(char) * length + 1);	// memory allocation
     ptr = strcpy(ptr, message);
 
+	// Set your name!
+
     ptr[6] = 'P'; // START HERE
-
-     // Set your name!
-     // Null terminate with '\0'
-
+	ptr[7] = 'a';
+	ptr[8] = 'u';
+	ptr[9] = 'l';
+	ptr[10] = '!';
+	ptr[11] = '\0';   // Null terminate with '\0'
+	
     printf("message: %s\n", ptr);
 
-	// message: Hello Paul!    // No x's!
+	// Expected: message: Hello Paul!    // No x's!
 	
     free(ptr);
 }
