@@ -91,7 +91,8 @@ void cStringExercise(void) {
     printf("message: %s\n", message);
 
     unsigned long length = strlen(message);
-    char *ptr = malloc(sizeof(char) * length);	// memory allocation
+	printf("Please allocate a string of size: %zu\n", sizeof(char) * length + 1);
+    char *ptr = malloc(sizeof(char) * length + 1);	// memory allocation
     ptr = strcpy(ptr, message);
 
     ptr[6] = 'P'; // START HERE
