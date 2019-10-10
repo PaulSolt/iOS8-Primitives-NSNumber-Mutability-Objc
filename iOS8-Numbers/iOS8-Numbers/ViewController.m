@@ -16,7 +16,19 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+//	NSArray *numArray = [NSArray arrayWithObject:3, 4, 5, nil]; // ERROR: Implicit conversion of 'int' to 'id _Nonnull' is disallowed with ARC
+	//	int is not an object (id = object in Objective-C)
+	// id = pointer type (any object ... AnyObject)
+
+	NSNumber *one = [NSNumber numberWithInt:1];
+	NSNumber *two = [NSNumber numberWithInt:2];
+	NSNumber *three = [NSNumber numberWithInt:3];
+
+	NSArray *numArray = [NSArray arrayWithObjects:one, two, three, nil];
+	printf("numArray: %s\n", [[numArray description] UTF8String]);
+	NSLog(@"numArray: %s\n", [[numArray description] UTF8String]);
+
 }
 
 
